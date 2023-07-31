@@ -56,12 +56,12 @@
       </button>
     </form>
 
+    <UserTable  @deleteUser="deleteUser" @editUser="updateUser"/>
 
-    <div class="overflow-auto">
+    <!-- <div class="overflow-auto">
       <table class="table">
         <thead>
           <tr>
-            <!-- <th scope="col">Id</th> -->
             <th scope="col">F Name</th>
             <th scope="col">F Last</th>
             <th scope="col">Father Name</th>
@@ -73,7 +73,6 @@
         </thead>
         <tbody>
           <tr v-for="user in userStore.users" :key="user._id">
-            <!-- <th scope="row">{{ user._id }}</th> -->
             <td>{{ user.fname }}</td>
             <td>{{ user.lname }}</td>
             <td>{{ user.father_name }}</td>
@@ -95,7 +94,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -118,7 +117,6 @@ const userStore = useUserStore();
 onMounted(() => {
   userStore.getAll();
 });
-
 
 const submitForm = (async (event) => {
   event.preventDefault();
